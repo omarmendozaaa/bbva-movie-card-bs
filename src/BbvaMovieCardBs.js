@@ -85,6 +85,7 @@ export class BbvaMovieCardBs extends LitElement {
         </p>
         </div>
       </div>
+      <br>
     `}`;
   }
 }
