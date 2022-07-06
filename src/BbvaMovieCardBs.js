@@ -27,14 +27,14 @@ export class BbvaMovieCardBs extends LitElement {
   static get properties() {
     return {
       movie: { type: Object },
-      isdiscovery: { type: Boolean },
+      isextended: { type: Boolean },
     };
   }
 
   // Initialize properties
   constructor() {
     super();
-    this.isdiscovery = false;
+    this.isextended = false;
     this.base_url = 'https://image.tmdb.org/t/p/original';
   }
 
@@ -47,7 +47,7 @@ export class BbvaMovieCardBs extends LitElement {
 
   // Define a template
   render() {
-    return html` ${this.isdiscovery
+    return html` ${this.isextended
       ? html`
           <div class="mb-3">
             <div class="card-body">
