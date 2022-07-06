@@ -77,15 +77,13 @@ export class BbvaMovieCardBs extends LitElement {
         `
       : html`
       <div class="card" style="width: 12.8rem;">
-      <img src="${this.base_url}${this.movie.poster_path}" class="card-img-top" alt="${this.movie.title}">
-      <div class="card-body">
-      <p class="fw-bold">${this.movie.title}</p>
-                    <p class="card-text">
-                      <small class="text-muted"
-                        >${this.movie.release_date}</small
-                      >
-                    </p>
-      </div>
+        <img src="${this.base_url}${this.movie.poster_path}" class="card-img-top" alt="${this.movie.title}">
+        <div class="card-body">
+          <p class="fw-bold">${this.movie.title}</p>
+          <p class="card-text">
+            <small class="text-muted">${this.movie.release_date}</small>
+        </p>
+        </div>
       </div>
     `}`;
   }
