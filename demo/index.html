@@ -27,7 +27,7 @@
 
   <body>
     <bbva-core-demo-helper>
-      <bbva-core-demo-case heading="Basic" description="Default specs">
+      <bbva-core-demo-case heading="Discovery" description="Default specs">
         <template>
           <bbva-movie-card-bs id="demo"></bbva-movie-card-bs>
           <script>
@@ -35,10 +35,26 @@
               const data = await fetch('./data/data.json').then(response => response.json())
               const demo = document.querySelector('#demo')
               demo.getData(data)
+              demo.isdiscovery = true
             })
           </script>
         </template>
       </bbva-core-demo-case>
+
+      <bbva-core-demo-case heading="Movie" description="Default specs">
+        <template>
+          <bbva-movie-card-bs id="demo"></bbva-movie-card-bs>
+          <script>
+            document.addEventListener('WebComponentsReady', async() => {
+              const data = await fetch('./data/data.json').then(response => response.json())
+              const demo = document.querySelector('#demo')
+              demo.getData(data)
+              demo.isdiscovery = false
+            })
+          </script>
+        </template>
+      </bbva-core-demo-case>
+
     </bbva-core-demo-helper>
   </body>
 </html>
