@@ -76,7 +76,7 @@ export class BbvaMovieCardBs extends LitElement {
           </div>
         `
       : html`
-      <div class="card h-100" style="width: 12.8rem;">
+      <div class="card h-100">
         <img src="${this.base_url}${this.movie.poster_path}" class="card-img-top" alt="${this.movie.title}">
         <div class="card-body">
           <p class="fw-bold">${this.movie.title}</p>
