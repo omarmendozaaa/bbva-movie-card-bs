@@ -44,7 +44,15 @@ export class BbvaMovieCardBs extends LitElement {
       getComponentSharedStyles('bbva-movie-card-bs-shared-styles'),
     ];
   }
-
+  _movieEvent(item) {
+    this.dispatchEvent(
+      new CustomEvent('id-movie-event', {
+        bubbles: true,
+        composed: true,
+        detail: item
+      })
+    );
+  }
   // Define a template
   render() {
     return html` ${this.isextended
@@ -58,11 +66,12 @@ export class BbvaMovieCardBs extends LitElement {
                     class="img-fluid rounded"
                     style="width: 90%"
                     alt="${this.movie.title}"
+                    @click=${() => this._movieEvent(this.movie.id)}
                   />
                 </div>
                 <div class="col-md-10">
                   <div class="card-body">
-                    <h5 class="card-title">${this.movie.title}</h5>
+                    <h5 class="card-title" @click=${() => this._movieEvent(this.movie.id)}>${this.movie.title}</h5>
                     <p class="card-text">${this.movie.overview}</p>
                     <p class="card-text">
                       <small class="text-muted"
@@ -77,9 +86,9 @@ export class BbvaMovieCardBs extends LitElement {
         `
       : html`
       <div class="card h-100">
-        <img src="${this.base_url}${this.movie.poster_path}" class="card-img-top" alt="${this.movie.title}">
+        <img src="${this.base_url}${this.movie.poster_path}" class="card-img-top" alt="${this.movie.title}" @click=${() => this._movieEvent(this.movie.id)}>
         <div class="card-body">
-          <p class="fw-bold">${this.movie.title}</p>
+          <p class="fw-bold" @click=${() => this._movieEvent(this.movie.id)}>${this.movie.title}</p>
           <p class="card-text">
             <small class="text-muted">${this.movie.release_date}</small>
         </p>
