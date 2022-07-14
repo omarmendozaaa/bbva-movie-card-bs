@@ -71,12 +71,12 @@ export class BbvaMovieCardBs extends LitElement {
                 </div>
                 <div class="col-md-10">
                   <div class="card-body">
+                    <small class="text-muted"
+                        >${this.movie.release_date}</small
+                      >
                     <h5 class="card-title" @click=${() => this._movieEvent(this.movie.id)}>${this.movie.title}</h5>
                     <p class="card-text">${this.movie.overview}</p>
                     <p class="card-text">
-                      <small class="text-muted"
-                        >${this.movie.release_date}</small
-                      >
                     </p>
                   </div>
                 </div>
@@ -88,9 +88,9 @@ export class BbvaMovieCardBs extends LitElement {
       <div class="card h-100">
         <img src="${this.base_url}${this.movie.poster_path}" class="card-img-top" alt="${this.movie.title}" @click=${() => this._movieEvent(this.movie.id)}>
         <div class="card-body">
+        <small class="text-muted">${this.movie.release_date}</small>
           <p class="fw-bold" @click=${() => this._movieEvent(this.movie.id)}>${this.movie.title}</p>
           <p class="card-text">
-            <small class="text-muted">${this.movie.release_date}</small>
         </p>
         </div>
       </div>
